@@ -1,0 +1,4 @@
+[package]
+org = "wso2"
+name = "ms_dynamics_automation"
+version = "0.1.0"

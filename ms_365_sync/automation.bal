@@ -1,9 +1,3 @@
 import ballerina/log;
+import ballerinax/microsoft.dynamics365businesscentral;
 
-public function main() returns error? {
-    do {
-    } on fail error e {
-        log:printError("Error occurred", 'error = e);
-        return e;
-    }
-}
