@@ -8,12 +8,16 @@ service /serviceManagement on serviceListener {
     
     // Resource to handle service requests
     resource function post requests(@http:Payload ServiceRequest serviceRequest) returns ServiceResponse|error {
-        // Process the service request
-        ServiceResponse response = {
-            message: string `Service request ${serviceRequest.requestId} received successfully`,
-            requestId: serviceRequest.requestId
+        string tableName = "incident";
+        
+        json payload = {
+            "short_description": serviceRequest.shortDescription,
+            "assignment_group": serviceRequest.assignmentGroup,
+            "urgency": serviceRequest.urgency,
+            "impact": serviceRequest.impact
         };
         
-        return response;
+        json response = check servicenowClient->createRecord(tableName, payload);
+        return {response};
     }
 }
