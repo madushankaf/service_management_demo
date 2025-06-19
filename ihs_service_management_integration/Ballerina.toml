@@ -1,0 +1,4 @@
+[package]
+org = "wso2"
+name = "ihs_service_management_integration"
+version = "0.1.0"

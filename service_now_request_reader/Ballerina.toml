@@ -1,0 +1,4 @@
+[package]
+org = "wso2"
+name = "service_now_request_reader"
+version = "0.1.0"
